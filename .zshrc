@@ -100,8 +100,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="/home/shameera/Tools/nvim-linux64_v094/bin:$PATH"
-
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
+
+export PATH="/home/shameera/Tools/nvim-linux64_v094/bin:$PATH"
+
+if type nvim > /dev/null 2>&1; then
+    alias vim=nvim
+fi
+
+export EDITOR=nvim
+export VISUAL=nvim
