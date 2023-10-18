@@ -117,7 +117,55 @@ export EDITOR=nvim
 export VISUAL=nvim
 ```
 
-## Install i3wm
+## Setup i3wm
+
+###  Install
 
 Run `sudo apt-get insatall i3` and logout and log back to i3
 
+
+### Swap LeftAlt <-> LeftCtl 
+
+Follow keyd [installation instructions](https://github.com/rvaiya/keyd#installation).
+
+```sh
+cd Tools/
+git clone https://github.com/rvaiya/keyd
+cd keyd
+sudo systemctl enable keyd && sudo systemctl start keyd
+# Install and start keyd
+sudo systemctl enable keyd
+
+# create default conf file
+sudo touch /etc/keyd/default.conf
+# update configs and reload
+sudo keyd reload
+
+# To monitor keys
+sudo keyd monitor
+```
+
+Swap keys with following configs
+
+```sh
+[ids]
+
+*
+
+[main]
+
+# Maps capslock to escape.
+capslock = esc 
+
+# Remap Left Ctrl and Left Alt
+leftalt = leftcontrol
+leftcontrol = leftalt
+```
+
+### Set wallpaper
+
+#### Nitrogen
+
+```sh
+sudo apt-get install nitrogen
+```
