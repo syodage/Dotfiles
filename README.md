@@ -33,18 +33,17 @@ Atlassian has a really good [tutorial](https://www.atlassian.com/git/tutorials/d
 
 ### Setup bare repository
 
-1. Initiate the bare repository 
-`git init --bare $HOME/.cfg`
+1. Initiate the bare repository `git init --bare $HOME/.cfg`
 
 1. Add a new function to wrap bare git command
+
 ```zsh
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 ```
 
-1. Update config to don't show untrack files. 
-` config config --local status.showUntrackedFiles no`
+1. Update config to don't show untrack files. ` config config --local status.showUntrackedFiles no`
 
 ### Setup existing bare repository
 
@@ -113,31 +112,4 @@ export VISUAL=nvim
 ## Install i3wm
 
 Run `sudo apt-get insatall i3` and logout and log back to i3
-## Setup
 
-### Links
-
-1. Clone the repository and create symbolic links.
-
-```sh
-# clone the dotfiels
-git clone git@github.com:syodage/dotfiles.git
-
-cd dotfiles
-# nvim configs.
-ln -s nvim ~/.config/nvim
-
-# Tmux configs.
-ln -s .tmux.conf ~/.tmux.conf
-```
-
-### NeoVim
-
-1. Install Neovim
-
-1. Install Neovim plugins. You can open nvim config directory with nvim (i.e `nvim ~/.config/nvim/lua/plugins.lua`) and just save it with `:w`.
-   Then packer(plugin manager) will install all the missing plugins.
-
-### Tmux
-
-[TODO]
