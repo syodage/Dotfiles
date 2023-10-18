@@ -4,6 +4,14 @@ This (bare)repo contains all the important config files and instrunctions to set
 
 ## Terminal 
 
+1. Install Alacritty Terminal
+
+```sh
+sudo apt update && sudo apt upgrade
+sudo apt-get install alacritty
+alacritty --version
+```
+
 1. Install [zsh]()
 
 ```zsh
