@@ -27,6 +27,21 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+## Nerd Fonts
+
+Convenience way to install Nerd Fonts is using `install.sh` script.
+
+```sh
+cd ~/Tools
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+./install FiraCode
+./install Hack
+
+# to check 
+fc-list | grep Hack
+```
+
 ## Github Repo
 
 1. Create a new ssh-key([github tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)) and add it to the github.
@@ -160,6 +175,21 @@ capslock = esc
 # Remap Left Ctrl and Left Alt
 leftalt = leftcontrol
 leftcontrol = leftalt
+```
+### Polybar
+
+```sh
+# install polybar
+sudo apt install polybar
+# If needed copy the default config
+# mkdir -p ~/.config/polybar && cp /usr/share/doc/polybar/config ~/.config/polybar/
+chmod +x ~/.config/polybar/launch.sh
+```
+
+Add following to `$HOME/.config/i3/config` file and remove `bar` block in config.
+
+```sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ```
 
 ### Set wallpaper
